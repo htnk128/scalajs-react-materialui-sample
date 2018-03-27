@@ -1,0 +1,27 @@
+@(title: String)(content: Html)
+@projectName = @{"scalajs-react-materialui-sample-client"}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>@title</title>
+</head>
+<body>
+    @content
+
+    @Seq(
+    s"$projectName-opt-library.js",
+    s"$projectName-fastopt-library.js"
+    ).find(name => getClass.getResource(s"/public/$name") != null).map(name => scalajs.html.jsScript(s"/assets/$name"))
+    @Seq(
+    s"$projectName-opt-loader.js",
+    s"$projectName-fastopt-loader.js"
+    ).find(name => getClass.getResource(s"/public/$name") != null).map(name => scalajs.html.jsScript(s"/assets/$name"))
+    @scalajs.html.scripts(projectName, name => s"/assets/$name", name => getClass.getResource(s"/public/$name") != null)
+</body>
+</html>

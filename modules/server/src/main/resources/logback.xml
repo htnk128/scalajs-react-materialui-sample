@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property name="LOG_PATTERN" value="%d %-5p [%t] %m - [%F:%L]%n"/>
+
+  <property name="ROOT_LOG_LEVEL" value="INFO"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="htnk128.scalajs.react.materialui.sample" level="DEBUG" />
+  <logger name="akka" level="DEBUG" />
+  <logger name="scalikejdbc" level="DEBUG" />
+  <root level="${ROOT_LOG_LEVEL}">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

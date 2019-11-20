@@ -1,5 +1,5 @@
 # scalajs-react-materialui-sample
-
+ScalaJS+React+Material-UIのサンプル
 - [scalajs](https://www.scala-js.org/)
 - [scalajs-react](https://github.com/japgolly/scalajs-react)
 - [scalacss](https://github.com/japgolly/scalacss)
